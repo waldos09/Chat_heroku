@@ -13,7 +13,7 @@ const server = app.listen(app.get('port'), () => {
 });
 
 //routes
-app.use(require('./routes/index'));
+app.use(require('../routes/index.js'));
 
 //enviar archivos estaticos (public)
 app.use(express.static(path.join(__dirname, 'public')));
