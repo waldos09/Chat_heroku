@@ -13,11 +13,13 @@ const server = app.listen(app.get('port'), () => {
 });
 
 //routes
-app.use(require('../routes/index.js'));
+const indexRouters = require('./routes/index');
 
 //enviar archivos estaticos (public)
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use('/', indexRouters);
 //cifrado rsa
 const key = new NodeRSA({ b: 1024 });
 //var encryptedString = key.encrypt(str, 'base64');
