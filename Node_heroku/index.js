@@ -12,6 +12,9 @@ const server = app.listen(app.get('port'), () => {
     console.log("el servidor esta en el puerto ", app.get('port'));
 });
 
+//routes
+app.use(require('./routes/index'));
+
 //enviar archivos estaticos (public)
 app.use(express.static(path.join(__dirname, 'public')));
 
